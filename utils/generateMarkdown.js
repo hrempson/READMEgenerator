@@ -19,10 +19,6 @@ function generateMarkdown(/* data */) {
   const NEWLINE = `\n`;
   var userData = null;
 
-  (async () => {
-    userData = await ghUser(data.github);
-  })();
-
 console.log(data);
   let fileContent = '';
   if(data.title)
@@ -48,9 +44,10 @@ function generateSection (name, value){
 }
 
 function renderImage (github){
-    if(this.userData != null){
-      return `![GitHub Image](${userData.avatar_url})`;
-    }
+  return `[GitHub](https://github.com/${github}.png)`;
+    // if(this.userData != null){
+    //   return `![GitHub Image](${userData.avatar_url})`;
+    // }
 }
 
 function githubPortfolio (github){

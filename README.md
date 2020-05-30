@@ -4,5 +4,5 @@ This is a very cool project
 Has amazing code
 # Installation
 It is so super easy
-undefined
+[GitHub](https://github.com/hrempson.png)
 [GitHub](https://github.com/hrempson)

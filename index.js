@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const createMarkdown = require ("./utils/generateMarkdown");
 const fs = require("fs");
 const path = require("path");
+// const axios = require("axios");
 
 const questions = [
     {
@@ -48,6 +49,11 @@ const questions = [
         type: "input",
         message: "What is your GitHub username? ",
         name: "github"
+    },
+    {
+        type: "input",
+        message: "What is your email? ",
+        name: "email"
     }
     
 ];
@@ -62,7 +68,6 @@ function writeToFile(fileName, data) {
 
     });
 }
-
 function init() {
     // inquirer
     // .prompt(questions)
