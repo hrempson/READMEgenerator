@@ -1,65 +1,83 @@
 const inquirer = require("inquirer");
 const createMarkdown = require ("./utils/generateMarkdown");
 const fs = require("fs");
+const path = require("path");
 
 const questions = [
     {
     type: "input",
     message: "What is the project title? ",
-    name: "Title"
+    name: "title"
     },
     {
         type: "input",
         message: "Provide a project description: ",
-        name: "Description"
+        name: "description"
     },
     {
         type: "input",
         message: "Provide a table of contents: ",
-        name: "Iontents"
+        name: "contents"
     },
     {
         type: "input",
         message: "Installation: ",
-        name: "Installation"
+        name: "installation"
     },
     {
         type: "input",
         message: "License: ",
-        name: "License"
+        name: "license"
     },
     {
         type: "input",
         message: "Contributing: ",
-        name: "Contributing"
+        name: "contributing"
     },
     {
         type: "input",
         message: "Tests: ",
-        name: "Tests"
+        name: "tests"
     },
     {
         type: "input",
         message: "Questions: ",
-        name: "Questions"
+        name: "questions"
     },
+    {
+        type: "input",
+        message: "What is your GitHub username? ",
+        name: "github"
+    }
     
 ];
 
 function writeToFile(fileName, data) {
-    fs.writeFile( fileName, createMarkdown (data), function (err){
+    fs.writeFile( fileName, createMarkdown(data), function (err){
         if (err) console.log (error);
-        else console.log("Success!");
+        else {
+            // console.log(path.)
+            console.log("Success!");
+        }
 
     });
 }
 
 function init() {
-    inquirer
-    .prompt(questions)
-    .then( (response) => {
-        console.log();
-        writeToFile('README.md', response);
+    // inquirer
+    // .prompt(questions)
+    // .then( (response) => {
+    //     //console.log(response);
+    //     writeToFile('README.md', response);
+    // });
+
+    /* Remove this hack */
+    fs.writeFile( "README.md", createMarkdown(), function (err){
+        if (err) console.log (error);
+        else {
+            // console.log(path.)
+            console.log("Success!");
+        }
     });
 }
 
