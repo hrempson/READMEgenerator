@@ -27,13 +27,18 @@ const questions = [
     },
     {
         type: "input",
-        message: "License: ",
+        message: "What is this app used for?",
+        name: "usage"
+    },
+    {
+        type: "input",
+        message: "Please enter your license number: ",
         name: "license"
     },
     {
         type: "input",
-        message: "Contributing: ",
-        name: "contributing"
+        message: "Contributors: ",
+        name: "contributors"
     },
     {
         type: "input",
@@ -54,6 +59,11 @@ const questions = [
         type: "input",
         message: "What is your email? ",
         name: "email"
+    },
+    {
+        type: "input",
+        message: "Would you like to include GitHub follower badge? (Yes/No): ",
+        name: "badge"
     }
     
 ];
@@ -69,21 +79,21 @@ function writeToFile(fileName, data) {
     });
 }
 function init() {
-    // inquirer
-    // .prompt(questions)
-    // .then( (response) => {
-    //     //console.log(response);
-    //     writeToFile('README.md', response);
-    // });
+    inquirer
+    .prompt(questions)
+    .then( (response) => {
+        //console.log(response);
+        writeToFile('README.md', response);
+    });
 
     /* Remove this hack */
-    fs.writeFile( "README.md", createMarkdown(), function (err){
-        if (err) console.log (error);
-        else {
-            // console.log(path.)
-            console.log("Success!");
-        }
-    });
+    // fs.writeFile( "README.md", createMarkdown(), function (err){
+    //     if (err) console.log (error);
+    //     else {
+    //         // console.log(path.)
+    //         console.log("Success!");
+    //     }
+    // });
 }
 
 init();

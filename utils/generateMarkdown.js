@@ -1,20 +1,20 @@
 const ghUser = require('gh-user');
 
-function generateMarkdown(/* data */) {
+function generateMarkdown(data ) {
 
-  /* REMOVE THIS HACK  */
-  data = {
-    title: "Heather's Project",
-    description: 'This is a very cool project',
-    contents: 'Has amazing code',
-    installation: 'It is so super easy',
-    license: 'MIT',
-    contributing: '',
-    tests: '',
-    questions: '',
-    github: 'hrempson'
-  }
-  /* REMOVE THIS HACK  */
+  /* Testing HACK  */
+  // data = {
+  //   title: "Heather's Project",
+  //   description: 'This is a very cool project',
+  //   contents: 'Has amazing code',
+  //   installation: 'It is so super easy',
+  //   license: 'MIT',
+  //   contributing: '',
+  //   tests: '',
+  //   questions: '',
+  //   github: 'hrempson'
+  // }
+  /* Testing HACK  */
 
   const NEWLINE = `\n`;
   var userData = null;
@@ -24,39 +24,86 @@ console.log(data);
   if(data.title)
     fileContent += generateTitle(data.title) + NEWLINE;
     fileContent += generateDescription(data.description) + NEWLINE;
-    fileContent += generateSection("Contents",data.contents) + NEWLINE;
-    fileContent += generateSection("Installation",data.installation) + NEWLINE;
+    fileContent += generateContents("contents",data.contents) + NEWLINE;
+    fileContent += generateInstallation("installation",data.installation) + NEWLINE;
+    fileContent += generateUsage(data.usage) + NEWLINE;
+    fileContent += generateLicense(data.license) + NEWLINE;
+    fileContent += generateContributors(data.contributors) + NEWLINE;
+    fileContent += generateTests(data.tests) + NEWLINE;
+    fileContent += generateQuestions(data.questions) + NEWLINE;
+    fileContent += generateEmail(data.email) + NEWLINE;
     fileContent += renderImage(data.github) + NEWLINE;
     fileContent += githubPortfolio(data.github) + NEWLINE;
+    fileContent += generateBadge(data.badge, data.github) + NEWLINE;
   return fileContent;
 }
 
 function generateTitle (title) {
-  return `# ${title}`;
+  return `# Project Title: ${title}`;
 }
 
 function generateDescription (description) {
-  return `${description}`;
+  return `# Project Description: ${description}`;
 }
 
-function generateSection (name, value){
-  return `# ${name}\n${value}`;
+function generateContents (contents) {
+  return `# Project Contents: ${contents}`;
 }
 
-function renderImage (github){
-  return `[GitHub](https://github.com/${github}.png)`;
-    // if(this.userData != null){
-    //   return `![GitHub Image](${userData.avatar_url})`;
-    // }
+function renderImage (github) {
+  return `GitHub Profile Image: [GitHub](https://github.com/${github}.png)`;
 }
 
-function githubPortfolio (github){
-  return `[GitHub](https://github.com/${github})`;
+function githubPortfolio (github) {
+  return `GitHub Profile Link: [GitHub](https://github.com/${github})`;
 }
+
+function generateInstallation (installation) {
+  return `# Installation Info: ${installation}`;
+}
+
+function generateUsage (usage) {
+  return `# Usage: ${usage}`;
+}
+
+function generateLicense (license) {
+  return `# License: ${license}`;
+  // return `![NPM](https://img.shields.io/npm/l/${license}?color=hotpink&style=plastic)`;
+  // return `# License: ![NPM](https://img.shields.io/endpoint?url='${license}'&style=plastic)`;
+  
+}
+
+function generateContributors (contributors) {
+  return `# Contributors: ${contributors}`;
+}
+
+function generateTests (tests) {
+  return `# Tests: ${tests}`;
+}
+
+function generateQuestions (questions) {
+  return `# Questions: ${questions}`;
+}
+
+function generateEmail (email) {
+  return `# Email Address: ${email}`;
+}
+
+function generateBadge (badge, github) {
+  if ( badge === "Yes" || "yes") {
+  return `# Badges: [Badge](https://img.shields.io/github/followers/${github}?color=blueviolet&label=Github%20Followers&style=plastic)`
+  }
+  else {
+    return `# Badges: None`
+}};
+// function generateSection (name, value) {
+//   return `# ${name}\n${value}`;
+// }
+
 
 
 // API for github details: https://api.github.com/users/hrempson
-// https://avatars2.githubusercontent.com/u/19823395?v=4
+
 
 
 module.exports = generateMarkdown;
