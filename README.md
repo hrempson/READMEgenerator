@@ -1,24 +1,24 @@
-# Project Title: dfsdf 
+# Project Title: 1 
 
-    # Project Description: dfs 
+# Project Description: 1 
 
-    # Project Contents: dfsd 
+# Project Contents: 1 
 
-    # Installation Info: fsd 
+# Installation Info: 1 
 
-    # Usage: fsdf 
+# Usage: 1 
 
-    # License: sd 
+# License: 1 
 
-    # Contributors: fs 
+# Contributors: 1 
 
-    # Tests: df 
+# Tests: 1 
 
-    # Questions: sdf 
+# Questions: 1 
 
-    # Email Address: dfsd 
+# Email Address:  
 
-    GitHub Profile Image: [GitHub](https://github.com/hrempson.png) 
+GitHub Profile Image: [GitHub](https://github.com/hrempson.png) 
 
-    GitHub Profile Link: [GitHub](https://github.com/hrempson)
-    # Badges: [Badge](https://img.shields.io/github/followers/hrempson?color=blueviolet&label=Github%20Followers&style=plastic)
+GitHub Profile Link: [GitHub](https://github.com/hrempson)
+    # Badges: [![Badge](https://img.shields.io/github/followers/hrempson?color=blueviolet&label=Github%20Followers&style=plastic)]()
