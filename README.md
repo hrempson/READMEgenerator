@@ -1,24 +1,20 @@
-# Project Title: 1 
+Created By : Heather Empson
 
-# Project Description: 1 
+Instructions - How to use the READMEGenerator :
 
-# Project Contents: 1 
+Open file and run "npm i" in node.
+When the user runs the READMEGenerator application in node :
 
-# Installation Info: 1 
+![image](./README-examples/Step1.png)
 
-# Usage: 1 
+It will then prompt the user with a series of questions to gather information to be included in the README markdown file :
 
-# License: 1 
+![image](./README-examples/Step2.png)
 
-# Contributors: 1 
+When completed, the user will see a "Success" message and a README.md will be created, displaying the infromation provided in the prompts :
 
-# Tests: 1 
+(Image 1/2)
+![image](./README-examples/Step3.png)
 
-# Questions: 1 
-
-# Email Address:  
-
-GitHub Profile Image: [GitHub](https://github.com/hrempson.png) 
-
-GitHub Profile Link: [GitHub](https://github.com/hrempson)
-    # Badges: [![Badge](https://img.shields.io/github/followers/hrempson?color=blueviolet&label=Github%20Followers&style=plastic)]()
+(Image 2/2)
+![image](./README-examples/Step4.png)

@@ -16,7 +16,7 @@ function generateMarkdown(data) {
 # Questions: ${questions} \n
 # Email Address: ${email} \n
 GitHub Profile Image: [GitHub](https://github.com/${github}.png) \n
-GitHub Profile Link: [GitHub](https://github.com/${github}) \n
+GitHub Profile Link: [GitHub](https://github.com/${github}) 
     `
     if ( badge.toLowerCase() === 'yes') {
       text +=`# Badges: [![Badge](https://img.shields.io/github/followers/${github}?color=blueviolet&label=Github%20Followers&style=plastic)]()`;
